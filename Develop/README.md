@@ -15,4 +15,9 @@ The user launches the application by clicking on the "Generate Password" button.
 
 The user must select at least one type of character to include. If no character types are chose, the user will receive message alerting them to restart the process and improve their selections.
 
-##  User Interface Images
+##  User Interface
+
+This is a screenshot of the password generator page.
+
+![image](https://user-images.githubusercontent.com/65414966/87259391-fa23ef00-c478-11ea-8115-dab3dd762764.png)
+

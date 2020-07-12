@@ -37,7 +37,8 @@ function generatePassword(){
   // check password length
   if(pwTotal<8 || pwTotal>128) {
   alert("Please enter a number between 8 and 128.");
-  return("");
+  generatePassword();
+  return;
   }
   
   var ifLowerCase = confirm("Do you want to include lower case letters?");
@@ -66,7 +67,7 @@ console.log(possibleChar);
 
 if (!ifSpecialChar && !ifNum && !ifUpperCase && !ifLowerCase) {
   alert("You must choose at least one type of character to include in order to create a password. Please try again.");
-  return("");
+  return;
 }
 
 // With some help from https://stackoverflow.com/questions/1497481/javascript-password-generator
