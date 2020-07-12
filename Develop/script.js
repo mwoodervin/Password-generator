@@ -6,12 +6,6 @@ var generateBtn = document.querySelector("#generate");
 // Assign variables for the charachters that might be used and
 // the string of possible characters that will be used by random
 // selector.
-var possibleChar = "";
-var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numChar = "0123456789";
-var specialChar = "\"!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-var password1 = "";
 
 
 // Write password to the #password input
@@ -30,51 +24,65 @@ generateBtn.addEventListener("click", writePassword);
 // Write your code below
 
 function generatePassword(){
-  var password1 = "";
-  var pwTotal = "";
-  var pwTotal = prompt("Enter password length here. Password must be between 8 and 128 characters.")
+
+  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numberCharacters = "0123456789";
+  var specialCharacters = "\"!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  var charactersToUse = [];
+  var finalPassword = "";
+
+
+  var pwTotal = parseInt(prompt("Enter password length here. Password must be between 8 and 128 characters."));
   
   // check password length
   if(pwTotal<8 || pwTotal>128) {
   alert("Please enter a number between 8 and 128.");
-  return("");
+  generatePassword();
+  return;
   }
   
-  var ifLowerCase = confirm("Do you want to include lower case letters?");
-  var ifUpperCase = confirm("Do you want to include upper case letters?");
-  var ifNum = confirm("Do you want to include numeric values?");
-  var ifSpecialChar = confirm("Do you want to include special characters?");
+  var useLowerCase = confirm("Do you want to include lower case letters?");
+  var useUpperCase = confirm("Do you want to include upper case letters?");
+  var useNum = confirm("Do you want to include numeric values?");
+  var useSpecialCharacters = confirm("Do you want to include special characters?");
 
-if(ifLowerCase) {
-  possibleChar = possibleChar.concat(lowerCase);
+if(useLowerCase) {
+  charactersToUse.push(lowerCase);
 }
 
-if(ifUpperCase) {
-  possibleChar = possibleChar.concat(upperCase);
+if(useUpperCase) {
+  charactersToUse.push(upperCase);
 }
 
-if(ifNum) {
-  possibleChar = possibleChar.concat(numChar);
+if(useNum) {
+  charactersToUse.push(numberCharacters);
 }  
 
-if(ifSpecialChar) {
-  possibleChar = possibleChar.concat(specialChar);
+if(useSpecialCharacters) {
+  charactersToUse.push(specialCharacters);
 
 }
 
-console.log(possibleChar);
 
-if (!ifSpecialChar && !ifNum && !ifUpperCase && !ifLowerCase) {
+if (!useSpecialCharacters && !useNum && !useUpperCase && !useLowerCase) {
   alert("You must choose at least one type of character to include in order to create a password. Please try again.");
-  return("");
+  generatePassword();
+  return;
 }
 
-// With some help from https://stackoverflow.com/questions/1497481/javascript-password-generator
-// and some research about strings on W3Schools
 
-for(i=0, n=possibleChar.length; i<pwTotal; i++) {
-  password1 += possibleChar.charAt(Math.floor(Math.random() * n))
+for(var index = 0; index < pwTotal; index++) {
+
+  var randomCharactersToUse = Math.floor(Math.random()) * pwTotal;
+  var randomCharacter = Math.floor(Math.random() * charactersToUse[randomCharactersToUse].length);
+  
+  finalPassword += charactersToUse[randomCharactersToUse][randomCharacter];
   }
 
-  return(password1);
+  console.log(randomCharactersToUse);
+  console.log(charactersToUse);
+  console.log(finalPassword);
+
+  return finalPassword;
 }
