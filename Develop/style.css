@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 *,
 *::before,
 *::after {
@@ -6,18 +7,18 @@
 
 html,
 body,
-.wrapper {
+div.wrapper {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: sans-serif;
-  background-color: #f9fbfd;
+  font-family: font-family: 'Oswald', sans-serif;
+  background-color: #5b7ea1;
 }
 
-.wrapper {
+div.wrapper {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
@@ -26,11 +27,19 @@ body {
 header {
   text-align: center;
   padding: 20px;
-  padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  padding-top: 20px;
+  color: hsl(202, 38%, 6%);
 }
 
-.card {
+div.h2 {
+  font-size: 14px;
+}
+
+div.li {
+  font-size: 12px;
+}
+
+div.card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
   border-width: 1px;
@@ -42,7 +51,7 @@ header {
   padding: 30px 40px;
 }
 
-.card-header::after {
+div.card-header::after {
   content: " ";
   display: block;
   width: 100%;
@@ -50,15 +59,15 @@ header {
   height: 2px;
 }
 
-.card-body {
+div.card-body {
   min-height: 100px;
 }
 
-.card-footer {
+div.card-footer {
   text-align: center;
 }
 
-.card-footer::before {
+div.card-footer::before {
   content: " ";
   display: block;
   width: 100%;
@@ -66,7 +75,7 @@ header {
   height: 2px;
 }
 
-.card-footer::after {
+div.card-footer::after {
   content: " ";
   display: block;
   clear: both;

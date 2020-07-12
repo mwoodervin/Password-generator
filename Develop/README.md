@@ -1,4 +1,4 @@
-#   Password Generator
+#   RANDOM PASSWORD GENERATOR
 
 ##  Purpose of the Application
 
