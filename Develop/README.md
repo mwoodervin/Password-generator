@@ -2,7 +2,7 @@
 
 ##  Purpose of the Application
 
-This is an application that generates a random password based on criteria solicited from the user. The applications is intended to be user-friendly and provide employees with access to sensitive data a location to easily generate strong passwords resutling in increased security.
+This application  generates a random password based on criteria solicited from the user. The purpose of the application is to provide employees having access to sensitive data a tool to easily generate strong passwords for increased security.
 
 ##  How to Use This Application
 
