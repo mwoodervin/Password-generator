@@ -6,8 +6,7 @@ let possibleChar = "";
 let lowerCase = "abcdefghijklmnopqrstuvwxyz";
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let numChar = "0123456789";
-let specialChar = "\"!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-let password1 = "";
+let specialChar = "\"!\#\$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 // EVENT LISTENER
 // Add event listener to generate button
@@ -22,10 +21,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-
-
-// Write your code below
 
 function generatePassword(){
   let possibleChar = "";
